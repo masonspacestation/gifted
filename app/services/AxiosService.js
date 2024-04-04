@@ -9,6 +9,17 @@ export const api = axios.create({
   withCredentials: true
 })
 
+export const giphyApi = axios.create({
+  baseURL: 'http://api.giphy.com/v1/gifs',
+  timeout: 8000,
+  params: {
+    key: '4T4MxZ6FNxRUkt3T61DeNpUeitUFrOz2',
+    rating: 'pg',
+    limit: 10,
+  }
+
+})
+
 api.interceptors.request.use(config => config, handleAxiosError)
 api.interceptors.response.use(response => response, handleAxiosError)
 
