@@ -20,7 +20,7 @@ class GiftsService {
         console.log(giftToOpen)
         const response = await api.put(`api/gifts/${id}`, giftToOpen)
         console.log('did gift open?', response.data)
-        AppState.emit('gifts')
+        AppState.emit('account')
     }
 
     async giveGift(formData) {
@@ -28,6 +28,7 @@ class GiftsService {
         console.log(AppState.giftToGive)
         const response = await api.post('api/gifts', AppState.giftToGive)
         console.log(response)
+        AppState.emit('gifts')
     }
 }
 
