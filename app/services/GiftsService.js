@@ -19,7 +19,7 @@ class GiftsService {
         giftToOpen.opened = true
         console.log(giftToOpen)
         const response = await api.put(`api/gifts/${id}`, giftToOpen)
-        console.log('did the gift open?', response.data)
+        console.log('did gift open?', response.data)
         AppState.emit('gifts')
     }
 
